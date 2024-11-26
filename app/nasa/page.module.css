@@ -14,24 +14,30 @@
 
 /* Title styling */
 .title {
-  font-size: 3rem;
+  font-size: 4rem; /* Adjust font size */
   color: #f9f871; /* Bright yellow for contrast */
-  text-align: center;
-  margin-bottom: 30px;
+  text-align: center; /* Center the text content horizontally */
+  margin: 0 auto; /* Center the block element */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add depth */
+  margin-bottom: 30px; /* Space below the title */
+  display: flex; /* Make it a flex container */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  width: 170%; /* Ensure it spans the full width of the screen */
 }
 
 /* Grid layout */
 .grid {
   display: grid;
   grid-template-columns: repeat(
-    auto-fit,
+    auto-fill,
     minmax(300px, 1fr)
-  ); /* Flexible column sizes */
+  ); /* Auto-fill adjusts to screen size */
   gap: 20px; /* Space between cards */
-  width: 100%; /* Full width */
-  max-width: 1600px; /* Optional: Set a maximum width for readability */
+  width: 300%; /* Use the full width of the screen */
+  max-width: 180%; /* Remove maximum width restriction */
   margin: 0 auto; /* Center grid content */
   padding: 20px; /* Add some padding around the grid */
   box-sizing: border-box; /* Include padding in dimensions */
+  /* justify-items: center; /* Center items horizontally within their cells */
 }
