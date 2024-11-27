@@ -1,0 +1,87 @@
+.container {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.logoContainer {
+  margin-bottom: 20px;
+}
+
+.logoImage {
+  width: 500px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #0ab10a;
+}
+
+.button {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #0ab10a;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0ab10a;
+}
+
+.demoImage {
+  width: 300px;
+  height: 400px;
+}
