@@ -1,6 +1,9 @@
-export const APP_NAME = "Starter Kit";
+export const APP_NAME = "Avinoam Jam Web";
 export const COURSE_GITHUB = "https://github.com/product-jam-2025";
 export const COURSE_CREDITS = "Product Jam 2025";
+export const TIC_TAC_TOE = "http://localhost:3000/tic-tac-toe";
+export const NASA = "http://localhost:3000/nasa";
+export const DESIGN = "http://localhost:3000/design";
 
 export const DEMOS_ENABLED =
   process.env.DEMOS_ENABLED === "true" ? true : false;

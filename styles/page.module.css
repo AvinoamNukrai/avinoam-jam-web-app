@@ -77,3 +77,19 @@
   color: #cccccc;
   padding: 20px;
 }
+
+/* Style for the unordered list (ul) */
+ul {
+  list-style-position: inside; /* Ensures bullets are inside the text container */
+  padding-left: 0; /* Removes default left padding */
+  margin-left: 0; /* Ensures proper alignment */
+}
+
+/* Style for each list item (li) */
+li {
+  margin-bottom: 10px; /* Adds space between items for readability */
+  padding-left: 20px; /* Adds a small indent for bullet alignment */
+  text-align: left; /* Aligns text to the left */
+  font-size: 1.2rem; /* Adjusts font size for readability */
+  line-height: 1.6; /* Ensures proper line height for longer text */
+}
