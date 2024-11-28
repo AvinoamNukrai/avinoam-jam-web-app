@@ -1,10 +1,13 @@
+"use client";
 import styles from "./styles/page.module.css";
-import InputField from "./components/InputField";
-import { Button } from "./components/Button";
 
 export default function Page() {
+  const handleForgotPassword = () => {
+    alert("שכחת סיסמה? ניתן לשחזר דרך המערכת!");
+  };
+
   return (
-    <main className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.logoContainer}>
         <img
           src="/images/web-page-logo.jpg"
@@ -17,10 +20,37 @@ export default function Page() {
       </div>
 
       <form className={styles.form}>
-        <InputField id="email" type="email" placeholder="מייל" />
-        <InputField id="password" type="password" placeholder="סיסמה" />
-        <Button>כניסה</Button>
+        <div className={styles.inputContainer}>
+          <label htmlFor="email" className={styles.label}></label>
+          <input
+            id="email"
+            type="email"
+            className={styles.inputField}
+            placeholder="מייל"
+            required
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="password" className={styles.label}></label>
+          <input
+            id="password"
+            type="password"
+            className={styles.inputField}
+            placeholder="סיסמה"
+            required
+          />
+        </div>
+        <button
+          type="button"
+          className={styles.forgotButton}
+          onClick={handleForgotPassword}
+        >
+          שכחתי סיסמא
+        </button>
+        <button type="submit" className={styles.submitButton}>
+          כניסה
+        </button>
       </form>
-    </main>
+    </div>
   );
 }

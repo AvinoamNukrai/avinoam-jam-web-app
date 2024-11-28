@@ -8,11 +8,13 @@ export default function Navbar() {
         <Link href="/">{APP_NAME}</Link>
       </h1>
       <nav>
-        <Link href="/">Home</Link>
-        <Link href={COURSE_GITHUB} target="_blank">
-          GitHub
+        <Link href="http://localhost:3000/tic-tac-toe">Tic-Tac-Toe</Link>
+        <Link href={COURSE_GITHUB} target="http://localhost:3000/nasa">
+          Nasa
         </Link>
-        {DEMOS_ENABLED ? <Link href="/demos">Demos</Link> : null}
+        {DEMOS_ENABLED ? (
+          <Link href="http://localhost:3000/design">Design</Link>
+        ) : null}
       </nav>
     </header>
   );

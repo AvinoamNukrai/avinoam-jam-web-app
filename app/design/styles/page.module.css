@@ -1,87 +1,106 @@
+/* Container for the entire page */
 .container {
   background-color: black;
   color: white;
   min-height: 100vh;
-  width: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 20px;
+  text-align: center;
 }
 
+/* Logo and title section */
 .logoContainer {
   margin-bottom: 20px;
 }
 
 .logoImage {
-  width: 500px;
+  width: 470px;
   height: auto;
-  object-fit: contain;
   margin-bottom: 10px;
-  display: block;
 }
 
 .title {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 30px;
+  color: #cccccc;
 }
 
+/* Form styling */
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-}
-
-.inputContainer {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   max-width: 400px;
+}
+
+/* Input field styling */
+.inputContainer {
+  width: 100%;
+}
+
+.label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  text-align: right;
 }
 
 .inputField {
   width: 100%;
-  padding: 10px;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.737); /* Only the bottom border */
+  border-radius: 0; /* Remove any rounding */
+  background: transparent;
   font-size: 1rem;
-  border: 1px solid white;
-  border-radius: 5px;
-  background-color: transparent;
-  color: white;
+  color: rgba(255, 255, 255, 0.737);
+  padding: 8px 0; /* Add spacing */
+  outline: none;
+  text-align: right; /* Align the text to the right */
+  box-shadow: none; /* Remove any shadow */
 }
 
 .inputField:focus {
-  outline: none;
-  border-color: #0ab10a;
+  border-bottom-color: lightgreen; /* Change bottom border color on focus */
 }
 
-.button {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
+/* Forgot password button styling */
+.forgotButton {
+  background: none;
+  border: none;
+  color: lightblue;
+  font-size: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.forgotButton:hover {
+  color: white;
+}
+
+/* Submit button styling */
+.submitButton {
+  background-color: rgb(78, 180, 71);
+  color: black;
   font-size: 1rem;
   font-weight: bold;
   border: none;
   border-radius: 5px;
-  background-color: #0ab10a;
-  color: black;
+  padding: 10px 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  width: 100%;
 }
 
-.button:hover {
-  background-color: #0ab10a;
-}
-
-.demoImage {
-  width: 300px;
-  height: 400px;
+.submitButton:hover {
+  background-color: green;
+  color: white;
 }
