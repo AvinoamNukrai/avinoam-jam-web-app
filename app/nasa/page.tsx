@@ -11,9 +11,30 @@ type ApodItem = {
 };
 
 export default async function NASA() {
-  // Specify that getData returns an array of ApodItem
-  const data: ApodItem[] = await getData(20);
+  let data: ApodItem[] | null = null;
 
+  try {
+    // Attempt to fetch data
+    data = await getData(20);
+  } catch (error) {
+    console.error("Error fetching NASA data:", error);
+  }
+
+  // Handle the case where data is null (API failure)
+  if (!data) {
+    return (
+      <main className={styles.container}>
+        <h1 className={styles.title}>Welcome to NASA Astronomy Pictures</h1>
+        <div className={styles.grid}>
+          <p className={styles.error}>
+            Failed to load data from NASA API. Please try again later.
+          </p>
+        </div>
+      </main>
+    );
+  }
+
+  // Render the page with the fetched data
   return (
     <main className={styles.container}>
       <h1 className={styles.title}>Welcome to NASA Astronomy Pictures</h1>
