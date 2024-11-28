@@ -7,7 +7,7 @@ export default async function NASA() {
 
   return (
     <main className={styles.container}>
-      <h1 className={styles.title}>Welcome to NASA's Astronomy Pictures</h1>
+      <h1 className={styles.title}>Welcome to NASA Astronomy Pictures</h1>
       <div className={styles.grid}>
         {data.map((item, index) => (
           <Apod
