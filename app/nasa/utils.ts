@@ -1,29 +1,24 @@
 export async function getData(count: number) {
-  const apiKey = process.env.NASA_API_KEY; // Use environment variable for API key
-
-  if (!apiKey) {
-    console.error("NASA API key is missing!");
-    return null;
-  }
-
-  const dataEndPoint = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=${count}`;
+  const API_KEY = process.env.NASA_API_KEY;
+  const endpoint = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=${count}`;
 
   try {
-    const res = await fetch(dataEndPoint);
-
-    if (!res.ok) {
-      throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    const data = await res.json();
-    return data.map((item: any) => ({
-      title: item.title,
-      explanation: item.explanation,
-      date: item.date,
-      url: item.url,
-    }));
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.error("Error fetching data from NASA API:", error);
-    return null; // Return null on failure
+    console.error("Error fetching data:", error);
+    return [];
   }
+}
+
+export interface ApodItem {
+  title: string;
+  explanation: string;
+  date: string;
+  url: string;
 }
