@@ -47,7 +47,7 @@ export default function Home() {
             : A classic and fun game you can play anytime.
           </li>
           <li style={{ marginBottom: "10px", paddingLeft: "20px" }}>
-            <Link href="/nasa">
+            <Link href="http://localhost:3000/nasa">
               <span style={{ color: "#f9f871", cursor: "pointer" }}>
                 NASA Astronomy
               </span>
