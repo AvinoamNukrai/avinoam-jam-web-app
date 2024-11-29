@@ -1,42 +1,57 @@
-/* Main container */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: flex-start; /* Start content at the top */
-  padding: 20px;
-  background-color: #1e1e2f; /* Dark background */
-  min-height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
-  margin: 0; /* Remove margin */
-  box-sizing: border-box; /* Include padding in dimensions */
+.main {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(180deg, #3d98a4 10%, #fffee4 100%);
+  max-width: 100%; /* Prevent horizontal overflow */
+  overflow-x: hidden; /* Hide any accidental overflow */
 }
 
-/* Title styling */
-.title {
-  font-size: 4rem; /* Adjust font size */
-  color: #f9f871; /* Bright yellow for contrast */
-  text-align: center; /* Center the text content horizontally */
-  margin: 0 auto; /* Center the block element */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add depth */
-  margin-bottom: 30px; /* Space below the title */
-  display: flex; /* Make it a flex container */
-  justify-content: center; /* Horizontally center the content */
-  align-items: center; /* Vertically center the content */
-  width: 170%; /* Ensure it spans the full width of the screen */
-}
-
-/* Grid layout */
 .grid {
   display: grid;
   grid-template-columns: repeat(
-    auto-fill,
+    auto-fit,
     minmax(300px, 1fr)
-  ); /* Auto-fill adjusts to screen size */
-  gap: 20px; /* Space between cards */
-  width: 300%; /* Use the full width of the screen */
-  max-width: 180%; /* Remove maximum width restriction */
-  margin: 0 auto; /* Center grid content */
-  padding: 20px; /* Add some padding around the grid */
-  box-sizing: border-box; /* Include padding in dimensions */
+  ); /* Flexible grid layout */
+  gap: 2rem; /* Spacing between cards */
+  margin-top: 2rem;
+  width: 100%; /* Ensure the grid fits within the container */
+  padding: 0 2rem; /* Add padding to prevent cards from touching edges */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.card {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 100%; /* Scale image to fit within the card */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: cover; /* Ensure the image fills the container nicely */
+  max-height: 300px; /* Optional: Limit the height for consistency */
+}
+
+.header {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.cardText {
+  color: #555;
 }
