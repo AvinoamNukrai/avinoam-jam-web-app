@@ -1,42 +1,37 @@
-import { getData } from "./utils";
-import { Apod } from "./components/Apod";
 import styles from "./page.module.css";
+import { getData } from "./utils";
+import { ApodItem } from "./utils";
 
-type ApodItem = {
-  title: string;
-  explanation: string;
-  date: string;
-  url: string;
-};
+export default async function NasaPage() {
+  let data: ApodItem[] = []; // Ensure data is always an array
 
-export default async function NASA() {
-  const data: ApodItem[] | null = await getData(10); // Fetch 10 items, adjust as needed
-
-  if (!data) {
-    return (
-      <main className={styles.container}>
-        <h1 className={styles.title}>Welcome to NASA Astronomy Pictures</h1>
-        <p style={{ color: "red", fontSize: "1.2rem", marginTop: "20px" }}>
-          Failed to load data from NASA API. Please try again later.
-        </p>
-      </main>
-    );
+  try {
+    data = await getData(8); // Fetch 8 items
+  } catch (error) {
+    console.error("Failed to fetch NASA data:", error);
   }
 
   return (
-    <main className={styles.container}>
-      <h1 className={styles.title}>Welcome to NASA Astronomy Pictures</h1>
-      <div className={styles.grid}>
-        {data.map((item, index) => (
-          <Apod
-            key={index}
-            title={item.title}
-            date={item.date}
-            explanation={item.explanation}
-            url={item.url}
-          />
-        ))}
-      </div>
+    <main className={styles.main}>
+      <h1 className={styles.header}>NASA Astronomy Pictures</h1>
+      {data.length === 0 ? (
+        <p style={{ color: "red", fontSize: "1.2rem", marginTop: "2rem" }}>
+          Failed to load data from NASA API. Please try again later.
+        </p>
+      ) : (
+        <div className={styles.grid}>
+          {data.map((item, index) => (
+            <div key={index} className={styles.card}>
+              <img src={item.url} alt={item.title} className={styles.image} />
+              <h2 className={styles.cardTitle}>{item.title}</h2>
+              <p className={styles.cardText}>
+                <strong>Date:</strong> {item.date}
+              </p>
+              <p className={styles.cardText}>{item.explanation}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </main>
   );
 }
