@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { TIC_TAC_TOE, NASA, DESIGN } from "../lib/config";
 
 export default function Home() {
   return (
@@ -48,15 +48,22 @@ export default function Home() {
           }}
         >
           <li style={{ marginBottom: "10px", paddingLeft: "20px" }}>
-            Tic-Tac-Toe: A classic and fun game you can play anytime.
+            <a href={TIC_TAC_TOE} style={{ color: "#f9f871" }}>
+              Tic-Tac-Toe
+            </a>
+            : A classic and fun game you can play anytime.
           </li>
           <li style={{ marginBottom: "10px", paddingLeft: "20px" }}>
-            NASA Astronomy: A collection of stunning astronomy photos, courtesy
-            of NASA.
+            <a href={NASA} style={{ color: "#f9f871" }}>
+              NASA Astronomy
+            </a>
+            : A collection of stunning astronomy photos, courtesy of NASA.
           </li>
           <li style={{ marginBottom: "10px", paddingLeft: "20px" }}>
-            Design Page: A modern and unique design interface showcasing
-            creative elements.
+            <a href={DESIGN} style={{ color: "#f9f871" }}>
+              Design Page
+            </a>
+            : A modern and unique design interface showcasing creative elements.
           </li>
         </ul>
         <p
