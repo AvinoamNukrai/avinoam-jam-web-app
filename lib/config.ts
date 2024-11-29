@@ -1,5 +1,4 @@
 export const APP_NAME = "Avinoam Jam Website";
-export const COURSE_GITHUB = "https://github.com/product-jam-2025";
 export const COURSE_CREDITS = "Product Jam 2025";
 export const TIC_TAC_TOE = "/tic-tac-toe";
 export const NASA = "/nasa";

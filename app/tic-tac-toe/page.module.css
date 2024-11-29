@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh; /* Full viewport height */
-  background-color: #f0f8ff; /* Soft light blue background */
+  background: linear-gradient(180deg, #3d98a4 10%, #fffee4 100%);
   font-family: "Rubik", sans-serif;
   text-align: center;
   gap: 20px; /* Add space between title, status, and board */
