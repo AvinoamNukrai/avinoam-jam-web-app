@@ -30,13 +30,13 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Image styling */
 .image {
-  width: 100%; /* Scale to fit the card width */
+  width: 100%; /* Full width of the card */
   height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Prevent stretching or squishing */
-  border-radius: 10px;
-  margin-bottom: 15px;
+  max-height: 500px; /* Increase max height to display larger images */
+  object-fit: contain; /* Ensure the image fits proportionally without cropping */
+  border-radius: 10px; /* Keep rounded corners for consistency */
+  margin-bottom: 15px; /* Add spacing below */
 }
 
 /* Card title styling */

@@ -24,6 +24,6 @@ export async function getData(count: number) {
     }));
   } catch (error) {
     console.error("Error fetching data from NASA API:", error);
-    return null; // Return null to indicate failure
+    return null; // Return null on failure
   }
 }

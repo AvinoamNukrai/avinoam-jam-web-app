@@ -1,8 +1,7 @@
-import styles from "./page.module.css";
 import { getData } from "./utils";
 import { Apod } from "./components/Apod";
+import styles from "./page.module.css";
 
-// Define the type for each item in the data array
 type ApodItem = {
   title: string;
   explanation: string;
@@ -11,40 +10,29 @@ type ApodItem = {
 };
 
 export default async function NASA() {
-  let data: ApodItem[] | null = null;
+  const data: ApodItem[] | null = await getData(10); // Fetch 10 items, adjust as needed
 
-  try {
-    // Attempt to fetch data
-    data = await getData(20);
-  } catch (error) {
-    console.error("Error fetching NASA data:", error);
-  }
-
-  // Handle the case where data is null (API failure)
   if (!data) {
     return (
       <main className={styles.container}>
         <h1 className={styles.title}>Welcome to NASA Astronomy Pictures</h1>
-        <div className={styles.grid}>
-          <p className={styles.error}>
-            Failed to load data from NASA API. Please try again later.
-          </p>
-        </div>
+        <p style={{ color: "red", fontSize: "1.2rem", marginTop: "20px" }}>
+          Failed to load data from NASA API. Please try again later.
+        </p>
       </main>
     );
   }
 
-  // Render the page with the fetched data
   return (
     <main className={styles.container}>
       <h1 className={styles.title}>Welcome to NASA Astronomy Pictures</h1>
       <div className={styles.grid}>
-        {data.map((item: ApodItem, index: number) => (
+        {data.map((item, index) => (
           <Apod
             key={index}
             title={item.title}
-            explanation={item.explanation}
             date={item.date}
+            explanation={item.explanation}
             url={item.url}
           />
         ))}

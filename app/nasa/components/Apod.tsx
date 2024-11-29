@@ -1,18 +1,21 @@
 import styles from "./apod.module.css";
 
-interface ApodProps {
+export function Apod({
+  title,
+  date,
+  explanation,
+  url,
+}: {
   title: string;
-  explanation: string;
   date: string;
+  explanation: string;
   url: string;
-}
-
-export function Apod({ title, explanation, date, url }: ApodProps) {
+}) {
   return (
     <div className={styles.card}>
-      <img className={styles.image} src={url} alt={title} />
       <h2 className={styles.cardTitle}>{title}</h2>
       <p className={styles.date}>{date}</p>
+      <img className={styles.image} src={url} alt={title} />
       <p className={styles.explanation}>{explanation}</p>
     </div>
   );
