@@ -24,15 +24,6 @@ export default function Home() {
           style={{
             fontSize: "1.5rem",
             textAlign: "center",
-            marginBottom: "10px",
-          }}
-        >
-          Welcome to my personal website!
-        </p>
-        <p
-          style={{
-            fontSize: "1.5rem",
-            textAlign: "center",
             marginBottom: "20px",
           }}
         >
