@@ -1,4 +1,4 @@
-import { TIC_TAC_TOE, NASA, DESIGN } from "../lib/config";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -48,21 +48,27 @@ export default function Home() {
           }}
         >
           <li style={{ marginBottom: "10px", paddingLeft: "20px" }}>
-            <a href={TIC_TAC_TOE} style={{ color: "#f9f871" }}>
-              Tic-Tac-Toe
-            </a>
+            <Link href="/tic-tac-toe">
+              <span style={{ color: "#f9f871", cursor: "pointer" }}>
+                Tic-Tac-Toe
+              </span>
+            </Link>
             : A classic and fun game you can play anytime.
           </li>
           <li style={{ marginBottom: "10px", paddingLeft: "20px" }}>
-            <a href={NASA} style={{ color: "#f9f871" }}>
-              NASA Astronomy
-            </a>
+            <Link href="/nasa">
+              <span style={{ color: "#f9f871", cursor: "pointer" }}>
+                NASA Astronomy
+              </span>
+            </Link>
             : A collection of stunning astronomy photos, courtesy of NASA.
           </li>
           <li style={{ marginBottom: "10px", paddingLeft: "20px" }}>
-            <a href={DESIGN} style={{ color: "#f9f871" }}>
-              Design Page
-            </a>
+            <Link href="/design">
+              <span style={{ color: "#f9f871", cursor: "pointer" }}>
+                Design Page
+              </span>
+            </Link>
             : A modern and unique design interface showcasing creative elements.
           </li>
         </ul>
