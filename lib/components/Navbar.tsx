@@ -1,17 +1,36 @@
 import Link from "next/link";
-import { APP_NAME, TIC_TAC_TOE, NASA, DESIGN, DEMOS_ENABLED } from "../config";
 
 export default function Navbar() {
   return (
-    <header id="navbar">
-      <h1>
-        <Link href="/">{APP_NAME}</Link>
-      </h1>
-      <nav>
-        <Link href={TIC_TAC_TOE}>Tic-Tac-Toe</Link>
-        <Link href={NASA}>Nasa</Link>
-        {DEMOS_ENABLED ? <Link href={DESIGN}>Design</Link> : null}
-      </nav>
-    </header>
+    <nav
+      style={{
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+        backgroundColor: "#2a2a3c",
+        padding: "10px 20px",
+        position: "sticky",
+        top: "0",
+        zIndex: "1000",
+        color: "white",
+        fontSize: "1.2rem",
+      }}
+    >
+      <Link href="/" style={{ color: "#f9f871", textDecoration: "none" }}>
+        Home
+      </Link>
+      <Link
+        href="/tic-tac-toe"
+        style={{ color: "#f9f871", textDecoration: "none" }}
+      >
+        Tic-Tac-Toe
+      </Link>
+      <Link href="/nasa" style={{ color: "#f9f871", textDecoration: "none" }}>
+        NASA
+      </Link>
+      <Link href="/design" style={{ color: "#f9f871", textDecoration: "none" }}>
+        Design
+      </Link>
+    </nav>
   );
 }
