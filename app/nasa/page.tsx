@@ -3,10 +3,10 @@ import { getData } from "./utils";
 import { ApodItem } from "./utils";
 
 export default async function NasaPage() {
-  let data: ApodItem[] = []; // Initialize an empty array for data
+  let data: ApodItem[] = []; // Ensure data is always an array
 
   try {
-    data = await getData(20); // Fetch 8 items
+    data = await getData(15); // Fetch 8 items
   } catch (error) {
     console.error("Failed to fetch NASA data:", error);
   }
