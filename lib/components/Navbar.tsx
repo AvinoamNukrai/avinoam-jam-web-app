@@ -19,7 +19,7 @@ export default function Navbar() {
       <Link href="/" style={{ color: "#f9f871", textDecoration: "none" }}>
         Home
       </Link>
-      <Link
+      {/* <Link
         href="/tic-tac-toe"
         style={{ color: "#f9f871", textDecoration: "none" }}
       >
@@ -30,7 +30,7 @@ export default function Navbar() {
       </Link>
       <Link href="/design" style={{ color: "#f9f871", textDecoration: "none" }}>
         Design
-      </Link>
+      </Link> */}
     </nav>
   );
 }
