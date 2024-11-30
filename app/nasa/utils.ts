@@ -32,3 +32,10 @@ export async function getData(count: number) {
     return []; // Return an empty array on failure
   }
 }
+
+export interface ApodItem {
+  title: string;
+  explanation: string;
+  date: string;
+  url: string;
+}
