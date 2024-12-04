@@ -9,6 +9,7 @@ export default async function NasaPage() {
     data = await getData(15); // Fetch 8 items
   } catch (error) {
     console.error("Failed to fetch NASA data:", error);
+    return error;
   }
 
   return (
